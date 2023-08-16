@@ -1,21 +1,26 @@
+import './App.css';
+import AngryButton from './components/AngryButton';
+import CounterButton from './components/CounterButton';
+import LightSwitchButton from './components/LightSwitchButton';
+import TextRepeaterButton from './components/TextRepeaterButton';
 import React, { useState } from "react";
 
-function AngryButton(props) {
-  const [anger, setAnger] = useState(0);
+function App() {
+  const [light, setLight] = useState("off");
 
-  const handleClick = (amount) => {
-    (anger < 1 ? setAnger(anger + amount) : setAnger(0));
-  }
+  const dark = (light === 'off') ? 'dark' : '';
 
   return (
-    <button
-      style={{ backgroundColor: `rgba(255,0,0,${anger})` }} className="AngryButton"
-      onClick={() => handleClick(0.1)}
-    >
-    {anger < 1 && <span>Don't click me too much! </span>}
-    {anger > 1 && <span>Rawr!</span>}
-  </button>
+    <div className={`App ${dark}`}>
+      <AngryButton />
+      <CounterButton  />
+      <LightSwitchButton 
+        light={light}
+        setLight={setLight}
+      />
+      <TextRepeaterButton />
+    </div>
   );
 }
 
-export default AngryButton;
+export default App;

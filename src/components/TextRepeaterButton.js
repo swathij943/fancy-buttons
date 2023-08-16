@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
 function TextRepeaterButton() {
-
   const [repetitions, setRepetitions] = useState(1);
   const textArray = [];
 
   const handleClick = (amount) => {
     setRepetitions(repetitions + amount);
+
+ 
   }
 
   for (let i = 0; i < repetitions; i++) {
@@ -21,6 +22,7 @@ function TextRepeaterButton() {
       {textArray}
     </button>
   );
+
 }
 
 export default TextRepeaterButton;

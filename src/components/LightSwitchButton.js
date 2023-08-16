@@ -8,12 +8,12 @@ function LightSwitchButton(props) {
 
   return (
     <button 
-    className="LightSwitchButton"
-    onClick={() => handleClick()}
-  >
-    {props.light === "on" && <span><i>💡</i> I'm on!</span>}
+      className="LightSwitchButton"
+      onClick={() => handleClick()}
+    >
+      {props.light === "on" && <span><i>💡</i> I'm on!</span>}
       {props.light === "off" && <span className="off"><i>💡</i> I'm off!</span>}
-  </button>
+    </button>
   );
 }
 
